@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="currentPlan" type="com.app.atoz.models.CurrentPlanModel"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llRootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/space_10"
+            android:paddingEnd="@dimen/space_10">
+
+        <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey_light">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/space_20"
+                    android:paddingTop="60dp"
+                    android:paddingRight="@dimen/space_20"
+                    android:paddingBottom="@dimen/space_40">
+
+                <TextView
+                        android:id="@+id/tvSubscriptionPlanTitle"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/text_active_subscription_plan"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/font_larger"/>
+
+                <TextView
+                        android:id="@+id/tv_plan"
+                        style="@style/TextViewStyle.Bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:text="Gold"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:text="@{currentPlan.planName}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/font_larger"/>
+
+                <View
+                        android:layout_width="@dimen/space_30"
+                        android:layout_height="7dp"
+                        android:layout_marginTop="@dimen/space_20"
+                        android:background="@color/colorPrimary"/>
+
+                <TextView
+                        android:id="@+id/tv_offer"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_30"
+                        android:gravity="center"
+                        tools:text="Saved 20%"
+                        android:text="@{@string/text_saved_discount(currentPlan.discount)}"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/font_larger"/>
+
+                <TextView
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_30"
+                        android:gravity="center_horizontal"
+                        android:text="@string/text_benefits_on_services"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/font_large"/>
+
+                <TextView
+                        android:id="@+id/tvActiveServicesName"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_25"
+                        android:gravity="center_horizontal"
+                        tools:text="•Plumbing •Architect •AC Repair •Electrician •Lawyer"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/font_normal"/>
+
+                <TextView
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_30"
+                        android:gravity="center_horizontal"
+                        android:text="@string/text_expiration_date"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/font_large"/>
+
+                <TextView
+                        android:id="@+id/tvExpireDate"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_25"
+                        android:gravity="center_horizontal"
+                        tools:text="22 Aug 1994"
+                        android:text="@{currentPlan.getExpirationDate()}"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/font_normal"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</layout>

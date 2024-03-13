@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="order" type="com.app.atoz.models.UserServiceStatusList.ServiceResponse"/>
+        <variable name="viewModel" type="com.app.atoz.ui.myorders.MyOrdersViewModel"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/space_2"
+            app:cardCornerRadius="@dimen/space_4"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_marginEnd="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginBottom="@dimen/space_8">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/space_0_5"
+                android:padding="@dimen/space_16">
+
+            <!--android:src="@drawable/ic_temp_lawyers"-->
+            <ImageView
+                    android:id="@+id/ivOrder"
+                    android:layout_width="@dimen/space_80"
+                    android:layout_height="@dimen/space_80"
+                    android:scaleType="centerCrop"
+                    load_url_image="@{order.childCategoryImage}"
+                    tools:ignore="ContentDescription"/>
+
+            <TextView
+                    android:id="@+id/tvOrderName"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_toEndOf="@+id/ivOrder"
+                    android:layout_marginTop="@dimen/space_8"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:layout_toStartOf="@+id/llStatusDateBg"
+                    android:textSize="@dimen/font_large"
+                    tools:text="Cloths and Accessories"
+                    android:text="@{order.childCategory}"
+                    android:textColor="@color/black"/>
+
+            <TextView
+                    android:id="@+id/tvOrderId"
+                    style="@style/TextViewStyle.Medium"
+                    tools:text="#AC15428634"
+                    android:text="@{order.orderId}"
+                    android:layout_toEndOf="@+id/ivOrder"
+                    android:layout_marginTop="@dimen/space_4"
+                    android:gravity="start"
+                    android:layout_toStartOf="@+id/llStatusDateBg"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:textSize="@dimen/font_normal"
+                    android:layout_below="@+id/tvOrderName"
+                    android:textColor="@color/grey"/>
+
+            <TextView
+                    android:id="@+id/tvOrderAmount"
+                    style="@style/TextViewStyle.Bold"
+                    tools:text="₹ 150"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_medium"
+                    android:layout_toEndOf="@+id/ivOrder"
+                    android:layout_marginTop="@dimen/space_6"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:layout_below="@+id/tvOrderId"/>
+
+            <LinearLayout
+                    android:id="@+id/llStatusDateBg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true">
+
+                <TextView
+                        android:id="@+id/tvOrderStatus"
+                        android:layout_width="80dp"
+                        android:gravity="center"
+                        style="@style/TextViewStyle.Medium"
+                        android:textSize="@dimen/font_small_extra"
+                        android:background="@drawable/bg_rect_green_with_radius"
+                        android:textColor="@color/white"
+                        tools:text="Bill Uploaded"
+                        android:paddingTop="@dimen/space_6"
+                        android:paddingBottom="@dimen/space_6"/>
+
+                <TextView
+                        android:id="@+id/tvOrderDate"
+                        style="@style/TextViewStyle.Medium"
+                        android:textColor="@color/grey"
+                        android:layout_marginTop="@dimen/space_4"
+                        android:textSize="@dimen/font_small_extra"
+                        tools:text="apr 17,2019"
+                        android:text="@{order.getFormatedDate}"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

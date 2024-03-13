@@ -1,0 +1,421 @@
+<resources>
+    <string name="app_name">AtoZ9</string>
+
+    <string name="text_done">Done</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_ok">OK</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_no">NO</string>
+    <string name="text_camera">Camera</string>
+    <string name="text_gallery">Gallery</string>
+    <string name="text_dash">-</string>
+    <string-array name="dialog_items_choose_profile_image">
+        <item>@string/text_camera</item>
+        <item>@string/text_gallery</item>
+    </string-array>
+    <string name="dialog_title_profile_photo">Upload photo</string>
+
+    //Welcome
+    <string name="text_welcome">Welcome</string>
+    <string name="text_welcome_desc_one">Get your Favourite Food, Grocery, Vegetables, Beverages, Laundry at your
+        doorstep
+    </string>
+    <string name="text_welcome_desc_two">Get your Services done without stepping out from your home and get it completed
+        at your doorstep
+    </string>
+    <string name="text_welcome_desc_three">Wish your loved one on their Birthdays, Marriage anniversary…etc from
+        anywhere with a cake, Gift…etc
+    </string>
+    <string name="text_sign_in">Sign In</string>
+    <string name="text_create_account">Create Your Account</string>
+
+    //SignIn
+    <string name="text_sign_in_desc">Please Sign in to access Services.</string>
+    <string name="text_hint_email">Email</string>
+    <string name="text_hint_password">Password</string>
+    <string name="text_forgot_password">Forgot Password?</string>
+    <string name="text_sign_in_using">or sign in using</string>
+    <string name="text_new_user">New user? Sign up</string>
+    <string name="text_error_provider_sign_up">You can access your account after admin approval.</string>
+
+    //select account
+    <string name="text_select_account">Select Account</string>
+    <string name="text_select_account_desc">Please Select your account type
+        \n<b>User:</b> to place requests
+        \n<b>Service provider:</b> Select if you want to do other Users requests
+    </string>
+    <string name="text_already_account">Already have an Account? Sign in</string>
+    <string name="text_user">User</string>
+    <string name="text_provider">Provider</string>
+
+    //signup
+    <string name="text_sign_up">Sign up</string>
+    <string name="text_sign_up_as">Sign Up as %s</string>
+    <string name="text_sign_up_desc">Please Enter the following details to Enjoy Unlimited Services at your doorstep
+    </string>
+    <string name="text_hint_first_name">First Name</string>
+    <string name="text_hint_last_name">Last Name</string>
+    <string name="text_phone_number">Phone Number</string>
+    <string name="text_hint_address">Address</string>
+    <string name="text_terms_condition">By clicking Sign Up, you agree to our Terms and Conditions and Privacy Policy.
+    </string>
+    <string name="text_error_invalid_google_pic">Please choose valid pic</string>
+    <string name="text_upload_certificate">Upload Certificate</string>
+    <string name="text_error_email_already_exist">Email id already exist</string>
+    <string name="text_error_phone_already_exist">Phone already exist</string>
+    <string name="text_sign_up_using">or sign up using</string>
+    <string name="text_mobile_code">+ 91</string>
+
+    //main
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="my_orders">My Orders</string>
+    <string name="settings">Settings</string>
+    <string name="text_cancel_service">Cancel Service</string>
+
+    //home
+    <string name="you_are_in">You are in</string>
+    <string name="view_all">View All</string>
+    <string name="personal_services">Personal Services</string>
+    <string name="text_more_saving">More Saving!</string>
+    <string name="text_know_more">Know more</string>
+    <string name="text_instance_off_code">Instant off code</string>
+    <string name="text_discount_percentage">%1$d %%</string>
+    <string name="text_discount_application">* Discount applicable on service charge only</string>
+    <string name="text_read_more">Read More</string>
+    <string name="text_hello_user">Hi %s..</string>
+    <string name="text_hello_provider">Hi %s (Provider)..</string>
+    <string name="text_user_home_desc">100+ Local and Premium home service at your doorsteps.</string>
+    <string name="text_open_link">Open Link</string>
+    <string name="text_no_location_found">No location found</string>
+
+    //advertisement
+    <string name="text_title_advertise_details">Advertise Details</string>
+    <string name="text_no_advertise_content">No content available</string>
+
+    //coupon
+    <string name="text_title_coupon_details">Coupon Details</string>
+    <string name="text_coupon_code">Coupon Code :</string>
+    <string name="text_coupon_description">Description :</string>
+    <string name="text_coupon_discount">Discount :</string>
+    <string name="text_coupon_valid_till">Valid Till :</string>
+
+    //setting
+    <string name="text_address_manager">Address Manager</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="subscription">Subscription</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="logout">Logout</string>
+    <string name="submit">Submit</string>
+    <string name="change_password">Change Password</string>
+    <string name="log_out_message">Are you sure you want to Logout?</string>
+    <string name="text_share">Share</string>
+    <string name="text_rate_us">Rate Us</string>
+
+    //change password
+    <string name="text_hint_new_password">New password</string>
+    <string name="text_hint_old_password">Old password</string>
+    <string name="text_hint_confirm_password">Confirm password</string>
+    <string name="text_password_changed_success">Password changed successfully.</string>
+
+    //verification
+    <string name="text_verification">Verification</string>
+    <string name="text_verification_desc">We sent a 6-digit code to your mobile. Please enter it below and we\'ll have
+        you on your way.
+    </string>
+    <string name="text_enter_verification">Enter Verification Code</string>
+    <string name="text_resend_otp">Resend OTP</string>
+    <string name="text_submit">Submit</string>
+
+    //Forgot Password
+    <string name="text_forgot_password_desc">If you forgot your password, please enter your email address below to reset
+        your password.
+    </string>
+    <string name="text_success_forgot_password">Please check your email for reset your password.</string>
+
+    //category
+    <string name="text_personal_services">Personal Services</string>
+
+    //subcategory
+    <string name="text_next">Next</string>
+    <string name="text_search">Search</string>
+    <string name="text_error_select_subcategory_item">Please select at least 1 item</string>
+    <string name="text_note_info">Note: The below mentioned price is service charge only</string>
+
+    //post a request
+    <string name="text_post_request">Post a Request</string>
+    <string name="text_personal_details">Personal Details</string>
+    <string name="text_hint_enter_name">Enter Name</string>
+    <string name="text_your_own_order">Your Own Order</string>
+    <string name="text_hint_select_date">Date</string>
+    <string name="text_hint_select_time">Time</string>
+    <string name="text_hint_order_details">Order details</string>
+    <string name="text_upload_image">Upload Image (Max 5)</string>
+    <string name="text_send_request">Place Order</string>
+    <string name="text_price_with_rupees">₹ %s</string>
+    <string name="text_use_promo_code">Use Code: %s</string>
+    <string name="text_valid_till">Valid till %s</string>
+    <string name="text_note_order_description">Note : you can mention your favorite store and quantity in order
+        details
+    </string>
+
+    //Summary
+    <string name="text_summary">Summary</string>
+    <string name="text_services">Services</string>
+    <string name="text_dummy_date">Feb 18, 2019</string>
+    <string name="text_dummy_time">06:30 AM</string>
+    <string name="text_dummy_user_name">Dwayne Johnson</string>
+    <string name="text_dummy_address_value">Level 3 233 Adelaide Terrace\nPerth WA 6009 Australia</string>
+    <string name="text_change">change</string>
+    <string name="text_hint_promocode">Have a promocode?</string>
+    <string name="text_offer_discount">Offer Discount</string>
+    <string name="text_service_charge">Services Charge</string>
+    <string name="text_order_price">Order Price</string>
+    <string name="text_total_amount">Total Amount</string>
+    <string name="text_total_service_charge">Total Service Charge</string>
+    <string name="text_subscription_discount_amount">Subscription Discount</string>
+    <string name="text_go_home">Go Home</string>
+    <string name="text_order_successfully">Your order placed successfully.</string>
+
+    //payment method
+    <string name="text_payment_method">Payment Method</string>
+    <string name="text_pay_now">Pay Now</string>
+    <string name="text_select_option_to_pay">Amount</string>
+    <string name="text_add_new_card">+ Add New Card</string>
+    <string name="text_online_payment">Online Payment</string>
+    <string name="text_pay_online">Pay Online</string>
+    <string name="text_available_balance">Available Balance ₹ 150</string>
+    <string name="text_cash">Cash</string>
+    <string name="text_hint_card_number">Card number</string>
+    <string name="text_hint_card_holder_name">CARD HOLDER NAME</string>
+    <string name="text_hint_month">MM</string>
+    <string name="text_hint_year">YY</string>
+    <string name="text_hint_cvv">CVV</string>
+    <string name="text_add_card">ADD CARD</string>
+    <string name="search_by_services">Search by services</string>
+    <string name="my_profile">My Profile</string>
+    <string name="user_profile_image">User profile image</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="done">Done</string>
+    <string name="text_error_payment_not_supported">Online payment not supported in your device</string>
+    <string name="text_error_invalid_payment">Invalid payment option selected please retry</string>
+
+    //my order
+    <string name="text_tab_all">All</string>
+    <string name="text_tab_confirmed">@string/text_confirmed</string>
+    <string name="text_tab_cancelled">@string/text_cancelled</string>
+    <string name="text_tab_completed">@string/text_completed</string>
+    <string name="text_tab_bill_uploaded">@string/text_bill_uploaded</string>
+    <string name="text_tab_payment_done">@string/text_payment_done</string>
+    <string name="text_confirmed">Confirmed</string>
+    <string name="text_cancelled">Cancelled</string>
+    <string name="text_completed">Completed</string>
+    <string name="text_bill_uploaded">Bill Uploaded</string>
+    <string name="text_payment_done">Paid</string>
+
+    //my order details
+    <string name="text_order_details">Order Details</string>
+    <string name="text_edit_order_details">Edit Order Details</string>
+    <string name="text_years_experience">+%d Years Experience</string>
+    <string name="text_date">Date</string>
+    <string name="text_time">Time</string>
+    <string name="text_otp">OTP</string>
+    <string name="text_rate_review">Rate and review</string>
+    <string name="text_view_bill">View Bill</string>
+    <string name="text_title_rate_user">Your order successfully completed. Please rate your customer!!!</string>
+    <string name="text_skip">Skip</string>
+    <string name="text_rate">Rate</string>
+    <string name="text_total_bill_amount">Total bill amount</string>
+    <string name="text_btn_upload_bill">Upload Bill</string>
+    <string name="text_error_empty_total_bill">Total bill amount required</string>
+    <string name="text_error_empty_promo_code">Promo code required</string>
+    <string name="text_coupon_code_applied">Coupon code applied successfully</string>
+    <string name="text_otp_description">( Note: Give this OTP to provider for complete the order. Please do not share
+        until you receive your order.)
+    </string>
+    <string name="text_total_bill_note">( Note: Please enter only all uploaded bill\'s total amount. Do not include
+        service charge or discount.)
+    </string>
+    <string name="text_payment_status">Payment Status</string>
+    <string name="text_apply">Apply</string>
+    <string name="text_proceed_to_pay">Proceed to Pay</string>
+    <string name="text_otp_for_call_desc">Please use below PIN code while call is ongoing</string>
+    <string name="text_press_to_call">Press below icon to dial call</string>
+    <string name="text_or">OR</string>
+    <string name="text_bill_not_uploaded">Bill not available</string>
+    <string name="text_dialog_bill_confirm">You can\'t change the bill amount once you submit it.\nAre you sure you want to submit total bill amount?</string>
+
+    <!--selected service-->
+    <string name="text_select_service">Select Services</string>
+    <string name="text_services_selected">%d Services Selected</string>
+    <string name="text_services_provider">Services Provider</string>
+    <string name="text_gift_services">Gift Services</string>
+    <string name="text_btn_save">Save</string>
+    <string name="text_error_select_service">Please select at least 1 service</string>
+
+    //rating
+    <string name="experience">Experience</string>
+    <string name="rating">Rating</string>
+    <string name="leave_comments">Leave your comments</string>
+    <string name="rating_your_service_provider">Rate your service provider</string>
+    <string name="rate_your_customer">Rate your Customer</string>
+    <string name="text_error_empty_rating">Please give rating by selecting star</string>
+    <string name="text_error_empty_review">Please write comments</string>
+
+    //view rating
+    <string name="text_title_rating">Rate &amp; Reviews</string>
+
+    //profile
+    <string name="text_profile_success">Profile updated successfully</string>
+
+    <string name="edit">Edit</string>
+    <string name="text_your_services">Your Services</string>
+
+    //Job details
+    <string name="text_job_details">Job Details</string>
+    <string name="text_reject">Reject</string>
+    <string name="text_accept">Accept</string>
+    <string name="text_end_time">end time</string>
+    <string name="text_bill">Bill</string>
+    <string name="text_upload_bill">Upload Bill</string>
+    <string name="text_complete_job">complete job</string>
+    <string name="text_order_accepted">Order accepted successfully</string>
+
+    //Job done enter otp
+    <string name="text_title_enter_otp">Enter OTP</string>
+    <string name="text_enter_otp_desc">Please Say this OTP to your Service provider whenever your request completed.
+    </string>
+
+    //edit service
+    <string name="service_item_image">service item image</string>
+    <string name="text_title_edit_service">Edit Service</string>
+    <string name="text_hint_new_price">New price</string>
+    <string name="text_waiting_for_approval">Waiting for approval</string>
+    <string name="text_error_enter_new_price">Please enter new price</string>
+    <string name="text_error_price_not_zero">Price must be more than 0</string>
+
+
+    //existing service
+    <string name="confirm_msg_delete_service">Are you sure you want to delete this item?</string>
+    <string name="dialog_title_confirmation">Confirmation</string>
+    <string name="text_error_no_service_available">No service available</string>
+    <string name="text_delete_service_success">Service deleted successfully</string>
+
+    //Add new Service
+    <string name="text_title_add_service">Add Services</string>
+    <plurals name="services_success">
+        <item quantity="one">@string/text_service_added_success</item>
+        <item quantity="other">@string/text_services_added_success</item>
+    </plurals>
+    <string name="text_service_added_success">Service added successfully</string>
+    <string name="text_services_added_success">Services added successfully</string>
+
+    //verification screen
+    <string name="text_otp_sent">OTP sent to entered mobile number</string>
+    <string name="text_otp_resent">OTP resent to entered mobile number</string>
+    <string name="text_verification_success">Verification successfully</string>
+    <string name="text_error_invalid_otp_code">Entered OTP is not valid.</string>
+    <string name="text_error_quota_exceeded">Internal server error due to quota limit exceeds.</string>
+    <string name="text_error_msg_empty_otp">Please enter OTP code</string>
+    <string name="text_error_msg_invalid_otp">Please enter valid OTP</string>
+
+    //social strings
+    <string name="facebook_app_id" translatable="false">579262532567568</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb579262532567568</string>
+    <string name="err_msg_email_permision_denied">email permission denied!</string>
+
+    //validation
+    <string name="text_error_network">No Internet connection!!!</string>
+    <string name="text_error_internal_server">Internal server error. Please retry!!!</string>
+    <string name="text_error_timeout">Sorry, We lost you. Please retry!!!</string>
+    <string name="text_error_connection">Look a like we lost you for a moment. Please retry!!!</string>
+    <string name="text_error_empty_first_name">First name required</string>
+    <string name="text_error_empty_last_name">Last name required</string>
+    <string name="text_error_empty_email">Email required</string>
+    <string name="text_error_invalid_email">Invalid emailId</string>
+    <string name="text_error_empty_phone_number">Phone number required</string>
+    <string name="text_error_invalid_phone_number">Invalid Phone number</string>
+    <string name="text_error_empty_password">Password required</string>
+    <string name="text_error_old_password">Old Password required</string>
+    <string name="text_error_new_password">New Password required</string>
+    <string name="text_error_confirm_password">Confirm Password required</string>
+    <string name="text_error_old_new_password_not_same">You can not use old password as new password</string>
+    <string name="text_error_new_and_confirm_password_same">Confirm and new password must be same</string>
+    <string name="text_error_empty_location">Location required</string>
+    <string name="text_error_invalid_password">Minimum 8 character required.</string>
+    <string name="text_error_empty_address">Address required.</string>
+    <string name="text_error_empty_address_type">Address type required.</string>
+    <string name="text_error_empty_city">City required.</string>
+    <string name="text_error_certificate_required">Certificate required.</string>
+    <string name="location">Location</string>
+    <string name="select_address">Select Address</string>
+    <string name="title_activity_address_piker">AddressPikerActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="house_flat_no">House/Flat No</string>
+    <string name="home">Home</string>
+    <string name="work">Work</string>
+    <string name="other">Other</string>
+    <string name="save_as">Save As</string>
+    <string name="select_city">Select City</string>
+    <string name="delete">delete</string>
+    <string name="address_type">Address Type</string>
+    <string name="ok">OK</string>
+
+    <string name="change_setting">Change setting</string>
+    <string name="text_error_no_data_available">No data available</string>
+    <string name="text_pending">Pending</string>
+    <string name="text_inprogress">In Progress</string>
+    <string name="text_no_order_found">No order found</string>
+
+    <string name="text_error_empty_name">name required</string>
+    <string name="text_error_empty_date">Date required</string>
+    <string name="text_error_empty_time">Time required</string>
+    <string name="text_error_empty_note">Order details required</string>
+    <string name="text_retry">Retry</string>
+    <string name="text_error_something_went_wrong">Opps!!! something went wrong, Please retry</string>
+    <string name="text_are_your_sure">Are you sure you want to exit?</string>
+    <string name="err_enable_call">Application enable to call</string>
+    <string name="no_service_available_provider">No Service Request available at the moment</string>
+    <string name="no_service_available_user">No Service available in your area.</string>
+    <string name="text_error_please_upload_bill">Please upload bill</string>
+    <string name="invalid_otp">invalid OTP</string>
+    <string name="otp_message">Please enter 4 digit OTP</string>
+    <string name="no_internet">please check internet connection</string>
+    <string name="order">Order</string>
+    <string name="notification">Notifications</string>
+    <string name="promotion">Promotion</string>
+    <string name="notification_channel_description_promotion">Promotion notification</string>
+    <string name="notification_channel_description_price_change">You will receive Price Change related notification.
+    </string>
+    <string name="notification_channel_description_order">You will receive Order related notification like placed,
+        Confirmed and order completed.
+    </string>
+    <string name="price_change">Price Change</string>
+
+    //contact us
+    <string name="text_contact_us">Contact Us</string>
+    <string name="text_title_contact_us_desc">You need more information? \nplease contact us on :</string>
+    <string name="text_contact_us_email">atoz9service@gmail.com</string>
+    <string name="text_contact_us_phone">+91 9797497497</string>
+
+    //subscription
+    <string name="text_choose_your_plan">Choose your plan</string>
+    <string name="text_subscription_discount">Save %d%%</string>
+    <plurals name="text_offer_on_services">
+        <item quantity="one">Offers on below services for a %d month</item>
+        <item quantity="other">Offers on below services for a %d months</item>
+    </plurals>
+    <string name="text_subscription_buy">BUY ₹ %.2f</string>
+    <string name="text_subscription_price">₹ %.2f</string>
+    <string name="text_subscription_payment">Subscription Payment</string>
+    <string name="text_active_subscription_plan">Your Active Subscription Plan</string>k
+    <string name="text_saved_discount">Saved %d%%</string>
+    <string name="text_benefits_on_services">You have benefits on below services</string>
+    <string name="text_expiration_date">Expiration Date</string>
+    <string name="text_subscription_plan_price">Subscription Plan Amount</string>
+</resources>
+

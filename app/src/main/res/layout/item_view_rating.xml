@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="ratingModel" type="com.app.atoz.models.UserRatingModel"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/mtrl_card_spacing"
+            android:layout_marginTop="@dimen/mtrl_card_spacing"
+            android:layout_marginEnd="@dimen/mtrl_card_spacing"
+            android:layout_marginBottom="@dimen/mtrl_card_spacing">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+            <RatingBar
+                    android:id="@+id/rbShowRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:rating="@{ratingModel.rating}"
+                    tools:rating="3.3"/>
+
+            <TextView
+                    android:id="@+id/tvComments"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingTop="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16"
+                    android:fadeScrollbars="false"
+                    android:layout_below="@+id/rbShowRating"
+                    android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                    android:scrollbars="vertical"
+                    android:nestedScrollingEnabled="true"
+                    android:text="@{ratingModel.review}"
+                    tools:text="Thank you big brother Thank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brother"
+                    android:textColor="@color/dark_grey"/>
+
+            <TextView
+                    android:id="@+id/tvTime"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginRight="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_16"
+                    android:layout_below="@+id/tvComments"
+                    android:gravity="start"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{ratingModel.getTimeOfRatings()}"
+                    tools:text="2 weeks ago"
+                    android:textColor="@color/grey_medium_extra"/>
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

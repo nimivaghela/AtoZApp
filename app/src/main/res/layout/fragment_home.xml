@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="userName" type="String"/>
+    </data>
+
+    <LinearLayout
+            android:id="@+id/llRootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_light"
+            android:orientation="vertical"
+            tools:context=".ui.user.home.HomeFragment">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_16"
+                android:elevation="@dimen/space_1"
+                android:baselineAligned="false">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_you_are_in"
+                        style="@style/TextViewStyle.Regular"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/you_are_in"/>
+
+                <TextView
+                        android:id="@+id/tv_location"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        tools:text="Maninagar, Ahmedabad Gujarat"/>
+            </LinearLayout>
+
+            <FrameLayout
+                    android:id="@+id/frm_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                <ImageView
+                        android:layout_width="@dimen/space_30"
+                        android:layout_height="@dimen/space_30"
+                        android:tint="@color/black"
+                        android:src="@drawable/ic_notifications_black_24dp"
+                        tools:ignore="ContentDescription"/>
+
+                <TextView
+                        android:id="@+id/tv_notification"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="@dimen/space_4"
+                        android:background="@drawable/circle_red_bg_notification"
+                        android:gravity="center"
+                        android:maxLength="2"
+                        tools:text="30"
+                        android:visibility="gone"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/font_small_extra"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/pullToRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                        android:fadeScrollbars="false"
+                        android:scrollbars="vertical">
+
+                    <RelativeLayout
+                            android:id="@+id/rlHomeBg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:id="@+id/tvHelloUser"
+                                style="@style/TextViewStyle.Medium"
+                                android:layout_margin="@dimen/space_16"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/font_normal"
+                                android:text="@{@string/text_hello_user(userName)}"/>
+
+                        <TextView
+                                android:id="@+id/tvUserHomeDesc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_marginEnd="@dimen/space_16"
+                                style="@style/TextViewStyle.Regular"
+                                android:textColor="@color/grey"
+                                android:layout_below="@+id/tvHelloUser"
+                                android:textSize="@dimen/font_medium"
+                                android:text="@string/text_user_home_desc"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/tilSearch"
+                                style="@style/TextInputLayoutStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/space_16"
+                                android:layout_marginRight="@dimen/space_16"
+                                android:paddingTop="@dimen/space_2"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_below="@+id/tvUserHomeDesc"
+                                android:background="@color/white"
+                                android:elevation="1dp"
+                                android:hint="@string/search_by_services">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/tieSearch"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:lines="1"
+                                    android:inputType="text"
+                                    android:paddingTop="@dimen/space_10"
+                                    android:imeOptions="actionSearch"
+                                    android:drawableStart="@drawable/ic_search_24dp"
+                                    android:drawablePadding="4dp"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_home"
+                                android:layout_height="match_parent"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:scrollbars="vertical"
+                                android:nestedScrollingEnabled="false"
+                                android:fadeScrollbars="false"
+                                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                                android:layout_below="@+id/tilSearch"
+                                tools:ignore="RtlSymmetry"/>
+                    </RelativeLayout>
+                </androidx.core.widget.NestedScrollView>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <include
+                    android:id="@+id/include_no_location"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    layout="@layout/item_no_location_found"/>
+
+            <TextView
+                    android:id="@+id/tv_no_service"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    style="@style/TextViewStyle.Medium"
+                    android:text="@string/no_service_available_user"/>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

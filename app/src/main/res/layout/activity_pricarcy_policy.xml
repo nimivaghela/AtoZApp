@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.policy.PrivacyPolicyActivity">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable name="policy" type="String"/>
+    </data>
+    <LinearLayout
+            android:id="@+id/llRootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include layout="@layout/toolbar"
+                 android:id="@+id/include_toolbar"/>
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp">
+
+            <!--<TextView
+                    android:text="@{policy}"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16"
+                    android:paddingTop="@dimen/space_10"
+                    style="@style/TextViewStyle.Regular"
+                    android:background="@color/colorAccent"
+                    android:scrollbars="vertical"
+                    android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:fadeScrollbars="false"
+
+                    android:textColor="@color/dark_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>-->
+
+            <WebView
+                    android:id="@+id/terms_web"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top|left"
+                    android:background="@android:color/transparent"
+                    android:clipToPadding="false"
+                    android:scrollbars="none" />
+
+            <include
+                    android:id="@+id/progressBar"
+                    layout="@layout/item_progressbar"/>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

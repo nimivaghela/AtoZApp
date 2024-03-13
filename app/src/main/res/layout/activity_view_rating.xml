@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include
+                android:id="@+id/toolbarViewRating"
+                layout="@layout/toolbar"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvViewRatings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical"
+                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                android:fadeScrollbars="false"
+                android:padding="@dimen/space_8"
+                android:clipToPadding="false"
+                android:layout_below="@+id/toolbarViewRating"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:visibility="gone"
+                tools:listitem="@layout/item_view_rating"/>
+
+        <TextView
+                android:id="@+id/tvEmptyView"
+                style="@style/TextViewStyle.Regular"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_medium"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:text="@string/text_error_no_data_available"/>
+
+        <include
+                android:id="@+id/progressBar"
+                layout="@layout/item_progressbar"/>
+    </RelativeLayout>
+</layout>

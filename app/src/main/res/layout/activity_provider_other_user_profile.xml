@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.provider.ratecustomer.ProviderOtherUserProfileActivity">
+
+    <data>
+        <variable name="userProfile" type="com.app.atoz.models.RateUserProfile"/>
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <FrameLayout
+                android:id="@+id/flProfileBg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+
+            <ImageView
+                    android:id="@+id/iv_profile_image_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bg_circle_grey_camera"
+                    load_image="@{userProfile.profileImage}"
+                    tools:src="@tools:sample/avatars"
+                    tools:ignore="ContentDescription"/>
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#99000000"/>
+
+            <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_16"
+                    android:src="@drawable/ic_back_arrow"
+                    android:tint="@color/white"
+                    tools:ignore="ContentDescription"/>
+        </FrameLayout>
+
+        <ImageView
+                android:id="@+id/iv_profile_image"
+                android:layout_width="@dimen/space_140"
+                android:layout_height="@dimen/space_140"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-95dp"
+                load_image_circular="@{userProfile.profileImage}"
+                android:background="@drawable/bg_circle_grey_with_shadow"
+                android:contentDescription="@string/user_profile_image"
+                android:src="@drawable/bg_circle_grey_camera"
+                android:layout_below="@+id/flProfileBg"
+              />
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:layout_below="@+id/iv_profile_image"
+                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="false"
+                android:fillViewport="true">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:id="@+id/tv_user_name"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:layout_marginTop="@dimen/space_10"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:gravity="center"
+                        android:text="@{userProfile.getName()}"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/font_largest_medium"
+                        tools:text="@string/text_dummy_user_name"/>
+
+                <TextView
+                        android:id="@+id/tv_city"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_horizontal"
+                        android:text="@{userProfile.cityName}"
+                        tools:text="Ahmedabad"
+                        android:textColor="@color/grey_medium_extra"/>
+
+                <TextView
+                        android:id="@+id/tv_email"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center_horizontal"
+                        android:text="@{userProfile.emailId}"
+                        tools:text="samuelmorgan@gmail.com"
+                        android:textColor="@color/dark_grey"/>
+
+                <TextView
+                        android:id="@+id/tv_rating"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="@dimen/space_20"
+                        android:background="@drawable/bg_star"
+                        android:drawableStart="@drawable/ic_star_red"
+                        android:drawablePadding="@dimen/space_5"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="@dimen/space_15"
+                        android:paddingTop="@dimen/space_5"
+                        android:paddingRight="@dimen/space_15"
+                        android:paddingBottom="@dimen/space_5"
+                        android:text="@{userProfile.rating}"
+                        tools:text="4.8"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/space_10"
+                        android:background="@color/grey_light"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="25dp"
+                        android:orientation="vertical">
+
+                    <TextView
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/rate_your_customer"
+                            android:textColor="@color/dark_grey"/>
+
+                    <RatingBar
+                            android:id="@+id/rbProvider"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/space_10"
+                            tools:rating="3.3"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_comment"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_marginLeft="@dimen/space_20"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:layout_marginRight="@dimen/space_20"
+                            android:hint="@string/leave_comments">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_comments"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/ubuntu"
+                                android:gravity="top"
+                                android:imeOptions="actionDone"
+                                android:fadeScrollbars="false"
+                                android:maxLines="10"
+                                android:nestedScrollingEnabled="true"
+                                android:scrollbarStyle="insideInset"
+                                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                                android:scrollbars="vertical"
+                                android:inputType="textMultiLine"
+                                android:lines="3"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_submit"
+                            style="@style/ButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="@dimen/space_20"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="@dimen/space_20"
+                            android:padding="@dimen/space_15"
+                            android:text="@string/submit"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rcv_comments"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/grey_light"
+                            android:nestedScrollingEnabled="true"
+                            android:clipToPadding="false"
+                            android:paddingTop="@dimen/space_16"
+                            android:paddingBottom="@dimen/space_16"
+                            android:paddingStart="@dimen/space_8"
+                            android:paddingEnd="@dimen/space_8"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_comments"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <include
+                android:id="@+id/progressBar"
+                layout="@layout/item_progressbar"/>
+    </RelativeLayout>
+
+</layout>

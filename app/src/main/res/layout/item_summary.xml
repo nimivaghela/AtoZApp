@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="productItem" type="com.app.atoz.models.RequestItemList"/>
+    </data>
+    <RelativeLayout
+            android:id="@+id/llServicesBg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/space_0_5"
+            android:paddingStart="@dimen/space_16"
+            android:paddingEnd="@dimen/space_16"
+            android:paddingBottom="@dimen/space_20">
+
+        <ImageView
+                android:id="@+id/ivService"
+                android:layout_width="@dimen/space_80"
+                android:layout_height="@dimen/space_80"
+                android:scaleType="centerCrop"
+                load_url_image="@{productItem.serviceImage}"
+                android:src="@drawable/ic_temp_lawyers"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:id="@+id/tvSubcategoryName"
+                style="@style/TextViewStyle.Regular"
+                android:layout_toEndOf="@+id/ivService"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginStart="@dimen/space_12"
+                android:textSize="@dimen/font_large"
+                android:text="@{productItem.serviceName}"
+                tools:text="@string/text_your_own_order"/>
+
+        <RelativeLayout
+                android:id="@+id/rlPriceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvSubcategoryName"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_toEndOf="@+id/ivService"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_marginStart="@dimen/space_12"
+                android:layout_centerVertical="true">
+
+            <TextView
+                    android:id="@+id/tvPriceValue"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    tools:text="₹ 20"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_normal"/>
+
+            <TextView
+                    android:id="@+id/tvTotalAmountOriginalValue"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    tools:text="₹ 60"
+                    app:strikeThrough="@{true}"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="end"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:visibility="visible"
+                    android:textSize="@dimen/font_large"/>
+
+            <TextView
+                    android:id="@+id/tvTotalAmountValue"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    tools:text="₹ 50"
+                    android:textColor="@color/green"
+                    android:layout_toEndOf="@+id/tvTotalAmountOriginalValue"
+                    android:visibility="visible"
+                    android:textSize="@dimen/font_large"/>
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/tvDateValue"
+                style="@style/TextViewStyle.Medium"
+                android:text="@string/text_dummy_date"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/font_medium"
+                android:layout_toEndOf="@+id/ivService"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_marginStart="@dimen/space_12"
+                android:layout_below="@+id/rlPriceView"/>
+
+        <TextView
+                android:id="@+id/tvTimeValue"
+                style="@style/TextViewStyle.Medium"
+                android:text="@string/text_dummy_time"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/font_medium"
+                android:layout_toEndOf="@+id/tvDateValue"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_marginStart="@dimen/space_24"
+                android:layout_below="@+id/rlPriceView"/>
+
+        <ImageButton
+                android:id="@+id/ibDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/rlPriceView"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/space_8"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"
+                tools:ignore="ContentDescription"/>
+    </RelativeLayout>
+</layout>

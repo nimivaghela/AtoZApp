@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_9"
+                android:layout_marginTop="@dimen/space_10"
+                android:layout_marginEnd="@dimen/space_20"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/tv_service_name"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/text_more_saving"/>
+
+            <TextView
+                    android:id="@+id/tv_view_all"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:visibility="gone"
+                    android:textColor="@color/grey"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_more_saving"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_15"
+                android:paddingStart="@dimen/space_8"
+                android:paddingEnd="@dimen/space_0"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:scrollbarThumbHorizontal="@drawable/bg_scrollbar_horizontal_indicator"
+                android:scrollbars="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_more_saving_child"/>
+    </LinearLayout>
+    <data/>
+</layout>

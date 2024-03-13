@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.provider.home.ProviderHomeFragment">
+
+    <data>
+        <variable name="userName" type="String"/>
+    </data>
+
+    <FrameLayout
+            android:id="@+id/llRootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/pullToRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <RelativeLayout
+                    android:id="@+id/rlHomeBg"
+                    android:layout_width="match_parent"
+                    android:background="@color/grey_light"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:id="@+id/tvHelloUser"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_margin="@dimen/space_16"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_normal"
+                        android:text="@{@string/text_hello_provider(userName)}"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_provider_pending_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/grey_light"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/tvHelloUser"
+                        android:scrollbars="vertical"
+                        android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                        android:fadeScrollbars="false"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/item_provider_home"/>
+            </RelativeLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+                android:id="@+id/tv_no_service"
+                style="@style/TextViewStyle.Medium"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:text="@string/no_service_available_provider"/>
+
+        <include layout="@layout/item_progressbar"
+                 tools:visibility="visible"
+                 android:id="@+id/progress_bar"/>
+    </FrameLayout>
+</layout>

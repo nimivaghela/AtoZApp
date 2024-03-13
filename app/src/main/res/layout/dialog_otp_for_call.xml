@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/space_20">
+
+    <TextView
+        style="@style/TextViewStyle.Regular"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/text_otp_for_call_desc"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_normal" />
+
+    <TextView
+        android:id="@+id/tvOtpCode"
+        style="@style/TextViewStyle.Regular"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_10"
+        android:layout_marginBottom="@dimen/space_16"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_largest_normal"
+        tools:text="1234" />
+
+    <TextView
+        style="@style/TextViewStyle.Regular"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/text_press_to_call"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <ImageButton
+        android:id="@+id/ibCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_8"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_call"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        style="@style/TextViewStyle.Regular"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_16"
+        android:text="@string/text_or"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_normal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSkip"
+        style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_8"
+        android:text="@string/text_skip" />
+</LinearLayout>

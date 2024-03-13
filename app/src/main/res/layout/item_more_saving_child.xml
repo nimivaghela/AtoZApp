@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mtrl_card_spacing">
+
+        <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="150dp"
+                        load_image="@{couponItem.couponImage}"
+                        tools:ignore="ContentDescription"/>
+
+                <View
+                        android:layout_width="300dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/bg_coupon_shadow_grey"/>
+
+
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                    <TextView
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@{@string/text_discount_percentage(couponItem.discount)}"
+                            tools:text="10 %"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_largest_normal"/>
+
+                    <TextView
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/text_instance_off_code"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_small_extra"/>
+
+                    <TextView
+                            android:id="@+id/tvPromoCode"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:background="@drawable/red_round_courner"
+                            android:fontFamily="@font/ubuntu_medium"
+                            android:padding="@dimen/space_4"
+                            android:lines="1"
+                            android:paddingStart="@dimen/space_8"
+                            android:paddingEnd="@dimen/space_8"
+                            android:text="@{@string/text_use_promo_code(couponItem.couponCode)}"
+                            tools:text="Use Code:ATOZLUCKY"
+                            android:textSize="@dimen/font_normal"
+                            android:textColor="@color/white"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16"
+                    android:paddingTop="@dimen/space_8"
+                    android:paddingBottom="@dimen/space_8">
+
+                <TextView
+                        style="@style/TextViewStyle.Regular"
+                        android:text="@{@string/text_valid_till(couponItem.getCouponTillEndDate())}"
+                        tools:text="Valid till 31 Mar 2019 "
+                        android:textSize="@dimen/font_medium"
+                        android:textColor="@color/dark_grey"/>
+
+                <TextView
+                        style="@style/TextViewStyle.Regular"
+                        android:textSize="@dimen/font_small"
+                        android:layout_marginTop="@dimen/space_4"
+                        android:textColor="@color/dark_grey"
+                        android:text="@string/text_discount_application"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <data>
+        <variable
+                name="couponItem"
+                type="com.app.atoz.models.homescreen.CouponItem"/>
+    </data>
+</layout>

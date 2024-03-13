@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rlRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/SignUpToolbar"
+            layout="@layout/toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/SignUpToolbar"
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+            android:scrollbars="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16">
+
+                <TextView
+                    android:id="@+id/tvSignUpTitle"
+                    style="@style/TextViewStyle.Medium"
+                    android:text="@string/text_sign_up_as"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_largest_medium" />
+
+                <TextView
+                    android:id="@+id/tvSignUpDesc"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_below="@+id/tvSignUpTitle"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:text="@string/text_sign_up_desc"
+                    android:textColor="@color/grey" />
+
+                <RelativeLayout
+                    android:id="@+id/rlUploadPic"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_below="@+id/tvSignUpDesc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/space_28">
+
+                    <ImageView
+                        android:id="@+id/ivUploadPic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_circle_grey_with_shadow"
+                        android:src="@drawable/bg_circle_grey_camera"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/ivUploadPicPlus"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_alignEnd="@+id/ivUploadPic"
+                        android:layout_margin="@dimen/space_16"
+                        android:background="@drawable/ic_rounded_red_plus"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/llName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlUploadPic"
+                    android:layout_marginTop="@dimen/space_32"
+                    android:baselineAligned="false"
+                    android:weightSum="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilFirstName"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="0dp"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:layout_weight="0.5"
+                        android:hint="@string/text_hint_first_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etFirstName"
+                            style="@style/EditTextStyle.Medium"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName|textCapWords"
+                            tools:ignore="Autofill" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilLastName"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_width="0dp"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:layout_weight="0.5"
+                        android:hint="@string/text_hint_last_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etLastName"
+                            style="@style/EditTextStyle.Medium"
+                            android:imeOptions="actionNext"
+                            android:inputType="textPersonName|textCapWords"
+                            tools:ignore="Autofill" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_below="@+id/llName"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:hint="@string/text_hint_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        style="@style/EditTextStyle.Medium"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMobileCode"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/tilEmail"
+                    android:layout_marginTop="@dimen/space_24">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMobileCode"
+                        style="@style/EditTextStyle.Medium"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:maxLength="4"
+                        android:text="@string/text_mobile_code"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPhoneNumber"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/tilEmail"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:layout_toEndOf="@+id/tilMobileCode"
+                    android:hint="@string/text_phone_number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPhoneNumber"
+                        style="@style/EditTextStyle.Medium"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_below="@+id/tilPhoneNumber"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:hint="@string/text_hint_password"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassword"
+                        style="@style/EditTextStyle.Medium"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_location_piker"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_below="@+id/tilPassword"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:hint="@string/location"
+                    android:maxLines="3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_location_piker"
+                        style="@style/EditTextStyle.Medium"
+                        android:drawableEnd="@drawable/ic_add_location"
+                        android:focusable="false"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilAddress"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_below="@+id/til_location_piker"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:hint="@string/text_hint_address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etAddress"
+                        style="@style/EditTextStyle.Medium"
+                        android:fadeScrollbars="false"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine|textPostalAddress"
+                        android:maxLines="4"
+                        android:nestedScrollingEnabled="true"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                        android:scrollbars="vertical" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_city_state"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_below="@+id/tilAddress"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:hint="@string/select_city"
+                    android:maxLines="3">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ac_city_state"
+                        style="@style/EditTextStyle.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:importantForAutofill="no"
+                        android:padding="@dimen/space_18"
+                        tools:ignore="LabelFor"
+                        tools:targetApi="o" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/llUploadCertificateBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/til_city_state"
+                    android:layout_marginTop="@dimen/space_24"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:ignore="UseCompoundDrawables"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvUploadCertificate"
+                        style="@style/TextViewStyle.Medium"
+                        android:text="@string/text_upload_certificate"
+                        android:textColor="@color/grey" />
+
+                    <ImageView
+                        android:id="@+id/ivUploadCertificate"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:elevation="@dimen/space_2"
+                        android:src="@drawable/bg_rect_certificate"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvCertificateError"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:text="@string/text_error_certificate_required"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/font_medium"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSignUp"
+                    style="@style/ButtonStyle.Medium"
+                    android:layout_height="@dimen/space_56"
+                    android:layout_below="@id/llUploadCertificateBg"
+                    android:layout_marginTop="@dimen/space_32"
+                    android:text="@string/text_sign_up" />
+
+                <TextView
+                    android:id="@+id/tvSingUpViaSocialMsg"
+                    style="@style/TextViewStyle.Proxima"
+                    android:layout_below="@+id/btnSignUp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:text="@string/text_sign_up_using"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_medium" />
+
+
+                <LinearLayout
+                    android:id="@+id/llSocialOptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvSingUpViaSocialMsg"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/btnFacebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/space_8"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:src="@drawable/ic_facebook"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageButton
+                        android:id="@+id/btnGooglePlus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:src="@drawable/ic_google"
+                        tools:ignore="ContentDescription" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvTermsCondition"
+                    style="@style/TextViewStyle.Proxima"
+                    android:layout_below="@+id/llSocialOptions"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_32"
+                    android:gravity="center"
+                    android:textColor="@color/grey_medium_extra"
+                    android:textSize="@dimen/font_medium" />
+            </RelativeLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/progressBar"
+            layout="@layout/item_progressbar" />
+    </RelativeLayout>
+</layout>

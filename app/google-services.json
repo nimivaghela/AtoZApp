@@ -1,0 +1,88 @@
+{
+  "project_info": {
+    "project_number": "376525600243",
+    "firebase_url": "https://atoz-3a7fe.firebaseio.com",
+    "project_id": "atoz-3a7fe",
+    "storage_bucket": "atoz-3a7fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376525600243:android:3eaef89c838534fe",
+        "android_client_info": {
+          "package_name": "com.app.atoz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376525600243-0hdv21am122gfaje9eaiq9vem7b9lc5h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.atoz",
+            "certificate_hash": "778642be75ffa406ebecc533f838ee7d1adc2885"
+          }
+        },
+        {
+          "client_id": "376525600243-bpjnhvd7ec0h0l685h7n9c9isi471fbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.atoz",
+            "certificate_hash": "30c41505f0d41cc00c1c9e37cd93cf9961850779"
+          }
+        },
+        {
+          "client_id": "376525600243-intgamrl1hkr3kkm396v4ij5bttqo6li.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.atoz",
+            "certificate_hash": "e9c4d5adbfee8f007ba78c284f182803de2f5ad8"
+          }
+        },
+        {
+          "client_id": "376525600243-6ai8bfglndqld0tfa1algmdji9r9uabu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.atoz",
+            "certificate_hash": "3eaac0e0982d05984f508dfb05f6e738302d23f2"
+          }
+        },
+        {
+          "client_id": "376525600243-q6lhaf1gnmts4ijgevhv37m8cbkuc9j7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.atoz",
+            "certificate_hash": "b4d05e2a47856cfa318ac719b5c971388a319b7c"
+          }
+        },
+        {
+          "client_id": "376525600243-qimnvgdfn80dq725c5hn1r3f90fev2ke.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.atoz",
+            "certificate_hash": "82c9c95e209844a8d71401b247dedc9888c29cf4"
+          }
+        },
+        {
+          "client_id": "376525600243-d8om734ofe18v4vmgc5vub8dh0v8p0u2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAL1hxS_vkb4pYVPNgFZRVqvjbEcD-W914"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376525600243-i0fngu5ar5qr0eh9eigehhqs26tfgnnv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

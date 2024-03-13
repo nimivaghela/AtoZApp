@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/grey_light"
+            android:layout_height="match_parent">
+
+        <include
+                android:id="@+id/subcategoryToolbar"
+                layout="@layout/toolbar"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/subcategoryToolbar"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:id="@+id/tvNoteDesc"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/space_8"
+                    android:paddingTop="@dimen/space_8"
+                    android:gravity="center_horizontal"
+                    android:background="@color/white"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16"
+                    android:textSize="@dimen/font_small_extra"
+                    android:visibility="gone"
+                    android:text="@string/text_note_info"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSubCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbarStyle="outsideOverlay"
+                    android:background="@color/white"
+                    android:layout_above="@+id/btnNext"
+                    android:layout_below="@+id/tvNoteDesc"
+                    android:scrollbars="vertical"
+                    android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                    android:fadeScrollbars="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:listitem="@layout/item_view_all_subcategory"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNext"
+                    style="@style/ButtonStyle.Medium"
+                    android:layout_height="@dimen/space_56"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/space_32"
+                    android:layout_marginEnd="@dimen/space_32"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_16"
+                    android:visibility="gone"
+                    android:text="@string/text_next"/>
+
+            <TextView
+                    android:id="@+id/tvErrorEmpty"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"
+                    android:text="@string/text_error_no_data_available"/>
+        </RelativeLayout>
+
+        <include
+                android:id="@+id/progressBar"
+                layout="@layout/item_progressbar"/>
+    </RelativeLayout>
+</layout>

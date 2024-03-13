@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:id="@+id/llRootView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:context=".ui.provider.profile.ProviderProfileFragment">
+
+            <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                <ImageView
+                        android:id="@+id/ivProfileImageBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_circle_grey_camera"
+                        tools:src="@tools:sample/avatars"
+                        tools:ignore="ContentDescription"/>
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#99000000"/>
+            </FrameLayout>
+
+            <ImageView
+                    android:id="@+id/ivProfileImage"
+                    android:layout_width="@dimen/space_110"
+                    android:layout_height="@dimen/space_110"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="-70dp"
+                    android:background="@drawable/bg_circle_grey_with_shadow"
+                    android:contentDescription="@string/user_profile_image"
+                    android:src="@drawable/bg_circle_grey_camera"
+                    tools:src="@tools:sample/avatars"/>
+
+            <ImageView
+                    android:id="@+id/icEditProfile"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="-60dp"
+                    android:layout_marginEnd="@dimen/space_10"
+                    android:src="@drawable/ic_edit_round"
+                    tools:ignore="ContentDescription"/>
+
+            <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"
+                    android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                    android:fadeScrollbars="false">
+
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tvUserName"
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginStart="@dimen/space_16"
+                            android:layout_marginTop="@dimen/space_22"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:drawableEnd="@drawable/ic_badge"
+                            android:drawablePadding="@dimen/space_8"
+                            android:gravity="center"
+                            tools:text="Samuel Morgaas"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/font_largest_medium"/>
+
+                    <TextView
+                            android:id="@+id/tvCity"
+                            style="@style/TextViewStyle.Regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_4"
+                            android:layout_marginStart="@dimen/space_16"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:gravity="center_horizontal"
+                            android:layout_below="@+id/tvUserName"
+                            android:layout_centerHorizontal="true"
+                            tools:text="Ahmedabad"
+                            android:textColor="@color/grey_medium_extra"/>
+
+                    <TextView
+                            android:id="@+id/tvEmail"
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/space_10"
+                            android:layout_marginStart="@dimen/space_16"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:gravity="center_horizontal"
+                            tools:text="samuelmorgan@gmail.com"
+                            android:textColor="@color/dark_grey"
+                            android:layout_below="@+id/tvCity"
+                            android:textSize="@dimen/font_large"/>
+
+                    <TextView
+                            android:id="@+id/tvMobileNumber"
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="@dimen/space_15"
+                            android:layout_marginStart="@dimen/space_16"
+                            android:layout_marginEnd="@dimen/space_16"
+                            android:gravity="center_horizontal"
+                            tools:text="+91 9820420420"
+                            android:layout_below="@+id/tvEmail"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/font_normal"/>
+
+                    <TextView
+                            android:id="@+id/tvRating"
+                            style="@style/TextViewStyle.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/space_20"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/bg_star"
+                            android:drawableStart="@drawable/ic_star_red"
+                            android:drawablePadding="@dimen/space_5"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="@dimen/space_15"
+                            android:paddingTop="@dimen/space_5"
+                            android:paddingRight="@dimen/space_15"
+                            android:paddingBottom="@dimen/space_5"
+                            android:layout_below="@+id/tvMobileNumber"
+                            tools:text="4.8"/>
+
+                    <RelativeLayout
+                            android:id="@+id/rlEditServiceBg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/space_8"
+                            android:layout_below="@+id/tvRating">
+
+                        <View
+                                android:id="@+id/viewLineDivider"
+                                android:layout_width="match_parent"
+                                android:background="@color/grey_light"
+                                android:layout_marginBottom="@dimen/space_8"
+                                android:layout_height="@dimen/space_8"/>
+                        <TextView
+                                style="@style/TextViewStyle.Medium"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/font_large"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="@dimen/space_16"
+                                android:layout_below="@+id/viewLineDivider"
+                                android:layout_toStartOf="@+id/tvEdit"
+                                android:layout_alignTop="@+id/tvEdit"
+                                android:layout_alignBottom="@id/tvEdit"
+                                android:gravity="center_vertical"
+                                android:text="@string/text_your_services"/>
+
+                        <com.google.android.material.button.MaterialButton
+                                android:id="@+id/tvEdit"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/space_40"
+                                android:layout_alignParentEnd="true"
+                                android:background="@color/white"
+                                android:layout_below="@+id/viewLineDivider"
+                                android:fontFamily="@font/ubuntu"
+                                android:layout_marginEnd="@dimen/space_16"
+                                android:text="@string/edit"
+                                android:textColor="@color/colorPrimary"
+                                app:strokeColor="@color/colorPrimary"
+                                app:strokeWidth="@dimen/space_2"/>
+
+                        <View
+                                android:id="@+id/viewLineDivider1"
+                                android:layout_width="match_parent"
+                                android:background="@color/grey_light"
+                                android:layout_below="@+id/tvEdit"
+                                android:layout_marginTop="@dimen/space_8"
+                                android:layout_height="@dimen/space_8"/>
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvPersonalService"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:nestedScrollingEnabled="false"
+                            android:paddingTop="@dimen/space_16"
+                            android:orientation="vertical"
+                            android:layout_below="@+id/rlEditServiceBg"
+                            tools:itemCount="2"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:listitem="@layout/item_provider_exist_category"/>
+
+                </RelativeLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <include
+                android:id="@+id/progressBar"
+                layout="@layout/item_progressbar"/>
+    </FrameLayout>
+</layout>

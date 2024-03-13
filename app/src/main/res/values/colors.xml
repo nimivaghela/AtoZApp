@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ea1c26</color>
+    <color name="colorPrimaryDark">#BD0009</color>
+    <color name="colorAccent">#E0585E</color>
+    <color name="colorPrimaryRipple">#42F44336</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="grey">#878788</color>
+    <color name="grey_medium_extra">#9f9f9f</color>
+    <color name="grey_medium">#cdcdcd</color>
+    <color name="grey_light">#efefef</color>
+    <color name="white_dim">#f9f8f7</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="black_transparent">#40000000</color>
+    <color name="black_transparent_medium">#60000000</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_inactive_color">@color/grey_medium</color>
+
+    <!-- dots active colors -->
+    <color name="dot_active_color">#fb1e42</color>
+    <color name="divider">#6f6f6f</color>
+    <color name="dark_grey">#404041</color>
+    <color name="green">#20af53</color>
+    <color name="orange">#FFC107</color>
+    <color name="blue">#03A9F4</color>
+    <color name="pink_light">#fbebec</color>
+    <color name="green_light">#2C20AF53</color>
+    <color name="grey_light_50">#50efefef</color>
+</resources>

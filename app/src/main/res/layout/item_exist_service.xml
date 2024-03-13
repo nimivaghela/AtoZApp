@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="service" type="com.app.atoz.models.ServiceModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:id="@+id/rvServiceBg"
+                android:layout_width="match_parent"
+                android:padding="@dimen/space_16"
+                android:descendantFocusability="blocksDescendants"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/tvServiceImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/image_grocery"
+                    tools:ignore="ContentDescription"/>
+
+            <TextView
+                    android:id="@+id/tvServiceName"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_toEndOf="@+id/tvServiceImage"
+                    android:text="@{service.serviceName}"
+                    tools:text="Grocery"
+                    android:layout_alignTop="@+id/tvServiceImage"
+                    android:layout_alignBottom="@+id/tvServiceImage"
+                    android:gravity="center|start"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_large"/>
+
+            <ImageView
+                    android:id="@+id/ivDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tvServiceImage"
+                    android:layout_alignBottom="@+id/tvServiceImage"
+                    android:layout_toStartOf="@+id/ivNavigationArrow"
+                    android:src="@drawable/ic_close"/>
+
+            <ImageView
+                    android:id="@+id/ivNavigationArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tvServiceImage"
+                    android:layout_alignBottom="@+id/tvServiceImage"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:src="@drawable/ic_right_arrow"/>
+
+
+        </RelativeLayout>
+        <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@color/grey_light"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="service"
+            type="com.app.atoz.models.OrderDetailModel.ServiceRequest.ServiceRequestImage" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_4"
+        android:layout_marginEnd="@dimen/space_4"
+        android:background="@color/white"
+        android:elevation="@dimen/space_1"
+        app:cardCornerRadius="@dimen/space_8">
+        <!--android:src="@drawable/temp_ac"-->
+        <ImageView
+            android:id="@+id/ivOrderImage"
+            load_url_image="@{service.thumb}"
+            android:layout_width="125dp"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription"
+            tools:src="@tools:sample/avatars" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

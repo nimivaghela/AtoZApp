@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_margin="@dimen/mtrl_card_spacing"
+        app:cardBackgroundColor="#2B93CF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_temp_pest" />
+
+                <TextView
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:text="Pest Control Service"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_largest" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginStart="@dimen/space_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextViewStyle.Regular"
+                android:textSize="@dimen/font_small_extra"
+                android:layout_marginBottom="@dimen/space_20"
+                android:text="12 Service provider near you"
+                android:textColor="@color/grey_light" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <data>
+
+        <variable
+            name="serviceItemModel"
+            type="com.app.atoz.models.ServiceItemModel" />
+    </data>
+
+
+</layout>

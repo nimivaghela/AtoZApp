@@ -1,0 +1,217 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
+
+android {
+
+    compileSdkVersion 33
+
+    //type
+    def STRING = "String"
+    def RES_STRING = "string"
+
+    //variable
+    def API_URL = "API_URL"
+    def API_KEY = "API_KEY"
+    def RAZOR_PAY_KEY = "RazorPayKey"
+    def ADMOB_APP_ID = "AddMobAppId"
+    def ADMOB_BANNER_ID = "AddMobBannerId"
+    def GOOGLE_PLACE_API_KEY = "GooglePlaceApiKey"
+
+    //value
+//    def APP_PRODUCTION_URL = "\"http://atoz9.com:8876\""
+    def APP_PRODUCTION_URL = "\"https://api.atoz9.com/\""
+//    def APP_DEV_URL = "\"http://jenkins.openxcell.info:8876\""
+//    def APP_DEV_URL = "\"http://192.168.3.129:8876/\""
+//    def APP_DEV_URL = "\"https://614f-182-70-121-2.in.ngrok.io\""
+    def APP_DEV_URL = "\"https://api.atoz9.com/\""
+//    def APP_DEV_URL = "\"https://api.atoz9.com/\""
+
+    def API_KEY_VALUE = "\"\$2a\$10\$u6nbuC6u9cnq3p7tDakwY.Zl8k3lcoGSCNP4woAkeoUXnD3el9iQS\""
+
+    defaultConfig {
+        applicationId "com.app.atoz"
+        minSdkVersion 21
+        flavorDimensions "api"
+        targetSdkVersion 33
+        versionCode 32
+        versionName "1.5.14"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        buildConfigField STRING, API_KEY, API_KEY_VALUE
+        resValue RES_STRING, GOOGLE_PLACE_API_KEY, GooglePlaceApiKey
+    }
+
+    signingConfigs {
+        justswap {
+            keyAlias 'atoz@openxcell'
+            keyPassword 'atoz@openxcell'
+            storeFile file('../keystore/atoz.jks')
+            storePassword 'atoz@openxcell'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    productFlavors {
+        dev {
+            dimension "api"
+            buildConfigField STRING, API_URL, APP_DEV_URL
+            resValue RES_STRING, RAZOR_PAY_KEY, AtoZRazorPayTestKey
+            resValue RES_STRING, ADMOB_APP_ID, AdMobAppIdTest
+            resValue RES_STRING, ADMOB_BANNER_ID, AdMobBannerIdTest
+        }
+        production {
+            dimension "api"
+            buildConfigField STRING, API_URL, APP_PRODUCTION_URL
+            resValue RES_STRING, RAZOR_PAY_KEY, AtoZRazorPayLiveKey
+            resValue RES_STRING, ADMOB_APP_ID, AdMobAppIdLive
+            resValue RES_STRING, ADMOB_BANNER_ID, AdMobBannerIdLive
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.core:core-ktx:1.9.0-alpha05'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Material
+    implementation 'com.google.android.material:material:1.1.0-alpha10'
+
+    //LiveData and ViewModel
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //Logging Interceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.7'
+
+    // Glide for image loading
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.2.0'
+
+    //internet connection checking
+    implementation 'com.github.pwittchen:reactivenetwork-rx2:3.0.6'
+
+    //Printing logs
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+    // image cropping library
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    // Dagger
+    implementation "com.google.dagger:dagger:2.22.1"
+    kapt "com.google.dagger:dagger-compiler:2.22.1"
+
+    //Firebase Phone Number authentication
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    //FCM
+    implementation 'com.google.firebase:firebase-messaging:20.0.0'
+    //Admob
+    implementation 'com.google.firebase:firebase-ads:18.2.0'
+
+    //Location
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+
+
+    //Google + social authentication
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    // facebook social login
+    implementation 'com.facebook.android:facebook-login:5.0.3'
+
+
+    //chuck for checking network api call response in notification
+    debugImplementation('com.readystatesoftware.chuck:library:1.1.0') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+    releaseImplementation('com.readystatesoftware.chuck:library-no-op:1.1.0') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+    //place piker
+    implementation 'com.google.android.libraries.places:places:2.0.0'
+    implementation 'com.github.Sanjay-Prajapati:RSPlacePicker:v1.0.1'
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+
+    //zoom library
+    implementation 'com.bogdwellers:pinchtozoom:0.1'
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.0@aar') {
+        transitive = true
+    }
+
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2" // For Kotlin use kapt instead of annotationProcessor
+
+    //Razor Pay
+    implementation 'com.razorpay:checkout:1.5.5'
+
+    //Exo Player
+    implementation "com.google.android.exoplayer:exoplayer:2.10.1"
+
+
+}
+apply plugin: 'com.google.gms.google-services'

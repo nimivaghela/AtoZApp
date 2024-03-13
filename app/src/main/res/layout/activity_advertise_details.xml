@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="advertise" type="com.app.atoz.models.AdvertisementItem"/>
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include
+                android:id="@+id/include_toolbar"
+                layout="@layout/toolbar"/>
+
+        <ImageView
+                android:id="@+id/ivAdvertise"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="200dp"
+                android:background="@color/grey_light"
+                android:scaleType="fitCenter"
+                load_fit_center_image="@{advertise.mediaUrl}"
+                tools:ignore="ContentDescription"/>
+
+        <TextView
+                android:id="@+id/tvRedirectUrl"
+                style="@style/TextViewStyle.Medium"
+                android:background="@drawable/bg_rect_white_with_grey_border_radius"
+                android:padding="@dimen/space_8"
+                android:layout_gravity="end"
+                android:layout_margin="@dimen/space_16"
+                android:text="@string/text_open_link"/>
+
+        <TextView
+                android:id="@+id/tvAdvertiseContent"
+                style="@style/TextViewStyle.Regular"
+                android:textSize="@dimen/font_normal"
+                android:textColor="@color/dark_grey"
+                android:paddingStart="@dimen/space_16"
+                android:paddingTop="@dimen/space_16"
+                android:paddingEnd="@dimen/space_0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey_light"
+                android:gravity="start|top"
+                android:scrollbars="vertical"
+                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"/>
+    </LinearLayout>
+</layout>

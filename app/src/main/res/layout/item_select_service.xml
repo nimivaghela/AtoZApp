@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="service" type="com.app.atoz.models.ServiceModel"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:id="@+id/rvServiceBg"
+                android:layout_width="match_parent"
+                android:padding="@dimen/space_16"
+                android:descendantFocusability="blocksDescendants"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/ivServiceImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    load_url_image="@{service.serviceImageUrl}"
+                    android:src="@drawable/ic_bag"
+                    tools:ignore="ContentDescription"/>
+
+            <TextView
+                    android:id="@+id/tvServiceName"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_toEndOf="@+id/ivServiceImage"
+                    android:text="@{service.serviceName}"
+                    tools:text="Grocery"
+                    android:layout_alignTop="@+id/ivServiceImage"
+                    android:layout_alignBottom="@+id/ivServiceImage"
+                    android:gravity="center|start"
+                    android:layout_toStartOf="@+id/chbService"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_large"/>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/chbService"
+                    android:layout_width="@dimen/space_30"
+                    android:layout_height="@dimen/space_30"
+                    android:clickable="false"
+                    android:checked="@{service.selected}"
+                    android:layout_alignTop="@+id/ivServiceImage"
+                    android:layout_alignBottom="@+id/ivServiceImage"
+                    android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+        <View
+                android:id="@+id/view_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:background="@color/grey_light"/>
+    </LinearLayout>
+</layout>

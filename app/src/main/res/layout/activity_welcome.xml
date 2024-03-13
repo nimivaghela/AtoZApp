@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutDots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnSignIn"
+            android:layout_marginBottom="@dimen/space_28"
+            android:gravity="center"
+            android:orientation="horizontal" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignIn"
+            style="@style/ButtonStyle.Medium"
+            android:layout_height="@dimen/space_56"
+            android:layout_above="@+id/tvCreateYourAccount"
+            android:text="@string/text_sign_in" />
+
+        <TextView
+            android:id="@+id/tvCreateYourAccount"
+            style="@style/TextViewStyle.Bold"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/space_20"
+            android:layout_marginBottom="@dimen/space_64"
+            android:padding="@dimen/space_8"
+            android:text="@string/text_create_account"
+            android:textAllCaps="true"
+            android:textSize="@dimen/font_normal" />
+
+
+    </RelativeLayout>
+</layout>

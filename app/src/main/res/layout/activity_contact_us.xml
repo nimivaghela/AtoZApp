@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+
+    </data>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <include
+                android:id="@+id/contactUsToolbar"
+                layout="@layout/toolbar"/>
+
+        <TextView
+                style="@style/TextViewStyle.Medium"
+                android:id="@+id/tvContactUsDesc"
+                android:layout_margin="@dimen/space_16"
+                android:textSize="@dimen/font_large"
+                android:textColor="@color/grey"
+                android:text="@string/text_title_contact_us_desc"/>
+
+        <TextView
+                android:id="@+id/tvContactUsEmail"
+                style="@style/TextViewStyle.Medium"
+                android:layout_width="match_parent"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginEnd="@dimen/space_16"
+                android:text="@string/text_contact_us_email"
+                android:padding="@dimen/space_8"
+                android:drawablePadding="@dimen/space_8"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center"
+                android:drawableStart="@drawable/ic_email"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_0_5"
+                android:background="@drawable/item_divider"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"/>
+
+        <TextView
+                android:id="@+id/tvContactUsPhone"
+                style="@style/TextViewStyle.Medium"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_marginStart="@dimen/space_16"
+                android:layout_marginTop="@dimen/space_8"
+                android:text="@string/text_contact_us_phone"
+                android:padding="@dimen/space_8"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center"
+                android:drawablePadding="@dimen/space_8"
+                android:drawableStart="@drawable/ic_mobile"/>
+    </LinearLayout>
+</layout>

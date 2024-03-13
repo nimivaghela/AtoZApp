@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+        <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:paddingTop="@dimen/space_8"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/TextViewStyle.Bold"
+                    android:layout_gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/font_larger"
+                    android:layout_marginTop="@dimen/space_16"
+                    android:text="@string/text_edit_order_details"/>
+
+            <ImageButton
+                    android:id="@+id/ibClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:tint="@color/colorPrimary"
+                    android:background="@null"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:padding="@dimen/space_8"
+                    tools:ignore="ContentDescription"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilOrderDetails"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_below="@+id/tvTitle"
+                    android:layout_margin="@dimen/space_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etOrderDetails"
+                        style="@style/EditTextStyle.Medium"
+                        android:fadeScrollbars="false"
+                        android:inputType="textMultiLine"
+                        android:hint="@string/text_hint_order_details"
+                        android:minLines="10"
+                        android:gravity="top|start"
+                        android:maxLines="10"
+                        android:nestedScrollingEnabled="true"
+                        android:scrollbarStyle="insideInset"
+                        android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                        android:scrollbars="vertical"
+                        tools:ignore="Autofill"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    style="@style/ButtonStyle.Medium"
+                    android:layout_below="@+id/tilOrderDetails"
+                    android:layout_height="@dimen/space_56"
+                    android:layout_marginBottom="@dimen/space_16"
+                    android:text="@string/text_submit"/>
+        </RelativeLayout>
+
+        <include layout="@layout/item_progressbar"
+                 android:id="@+id/include_progress"/>
+    </FrameLayout>
+</layout>

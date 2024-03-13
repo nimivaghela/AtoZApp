@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="ratingModel" type="com.app.atoz.models.UserRatingModel"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="@dimen/mtrl_card_spacing"
+            android:layout_marginTop="@dimen/mtrl_card_spacing"
+            android:layout_marginEnd="@dimen/mtrl_card_spacing"
+            android:layout_marginBottom="@dimen/mtrl_card_spacing">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                android:paddingBottom="@dimen/space_16"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_comments"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:paddingStart="@dimen/space_16"
+                    android:paddingTop="@dimen/space_16"
+                    android:paddingEnd="@dimen/space_16"
+                    android:fadeScrollbars="false"
+                    android:maxLines="3"
+                    android:layout_alignParentTop="true"
+                    android:layout_above="@+id/llTimesBg"
+                    android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                    android:scrollbars="vertical"
+                    android:nestedScrollingEnabled="true"
+                    android:text="@{ratingModel.review}"
+                    tools:text="Thank you big brother Thank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brotherThank you big brother"
+                    android:textColor="@color/dark_grey"/>
+
+            <LinearLayout
+                    android:id="@+id/llTimesBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_16"
+                    android:layout_marginTop="@dimen/space_1"
+                    android:layout_marginRight="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_16"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:contentDescription="@string/user_profile_image"
+                        android:src="@drawable/ic_user_normal"
+                        load_image="@{ratingModel.sender.profileImage}"
+                        tools:srcCompat="@tools:sample/avatars"/>
+
+                <TextView
+                        android:id="@+id/tv_time"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_16"
+                        android:layout_marginRight="@dimen/space_16"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@{ratingModel.getTimeOfRatings()}"
+                        tools:text="2 weeks ago"
+                        android:textColor="@color/grey_medium_extra"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

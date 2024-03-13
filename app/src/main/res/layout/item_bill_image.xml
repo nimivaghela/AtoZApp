@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+                name="serviceImageModel" type="com.app.atoz.models.OrderDetailModel.ServiceRequest.ServiceRequestImage">
+        </variable>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:elevation="@dimen/space_2"
+            android:layout_marginStart="@dimen/space_2"
+            android:layout_marginEnd="@dimen/space_2"
+            android:layout_marginTop="@dimen/space_4"
+            android:layout_marginBottom="@dimen/space_4"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/space_2">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+            <ImageView
+                    android:id="@+id/ivBillImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentBottom="true"
+                    load_url_image="@{serviceImageModel.thumb}"
+                    tools:ignore="ContentDescription"/>
+
+            <ImageButton
+                    android:id="@+id/ibRemoveImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_4"
+                    android:layout_alignParentEnd="true"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:src="@drawable/ic_close_image_upload"
+                    tools:ignore="ContentDescription"
+                    android:visibility="gone"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

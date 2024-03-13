@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="service" type="com.app.atoz.models.CategoryModel"/>
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/space_16"
+            android:paddingTop="@dimen/space_26"
+            android:paddingRight="@dimen/space_16"
+            android:paddingBottom="@dimen/space_26">
+
+        <ImageView
+                android:id="@+id/iv_service"
+                android:layout_width="@dimen/space_50"
+                android:layout_height="@dimen/space_50"
+                android:contentDescription="@string/service_item_image"
+                load_url_image="@{service.categoryImage}"
+                tools:src="@tools:sample/avatars"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_service_item"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@{service.categoryName}"
+                    tools:text="Grocery"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_large"/>
+
+            <TextView
+                    android:id="@+id/tv_request_status"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_12"
+                    android:ellipsize="end"
+                    android:lines="2"
+                    android:visibility="@{service.requestedPrice==null? View.GONE : View.VISIBLE}"
+                    tools:text="@string/text_waiting_for_approval"
+                    android:textColor="@color/grey"
+                    android:textSize="@dimen/font_small_extra"/>
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_reg_bg_white"
+                android:drawableEnd="@drawable/ic_edit"
+                android:fontFamily="@font/ubuntu_medium"
+                android:gravity="center"
+                android:minWidth="@dimen/space_70"
+                android:paddingStart="@dimen/space_8"
+                android:paddingTop="@dimen/space_4"
+                android:paddingEnd="@dimen/space_4"
+                android:paddingBottom="@dimen/space_4"
+                tools:text="₹ 1000"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_medium_extra"/>
+
+    </LinearLayout>
+</layout>

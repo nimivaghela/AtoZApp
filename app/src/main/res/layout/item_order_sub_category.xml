@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="productItem"
+                type="com.app.atoz.models.RequestItemList"/>
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/llServicesBg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:elevation="@dimen/space_0_5"
+            android:paddingStart="@dimen/space_24"
+            android:paddingEnd="@dimen/space_24"
+            android:paddingBottom="@dimen/space_20">
+
+        <ImageView
+                android:id="@+id/ivService"
+                load_url_image="@{productItem.serviceImage}"
+                android:layout_width="@dimen/space_80"
+                android:layout_height="@dimen/space_80"
+                android:scaleType="centerCrop"
+                tools:ignore="ContentDescription"
+                tools:src="@tools:sample/avatars"/>
+
+        <TextView
+                android:id="@+id/tvSubcategoryName"
+                style="@style/TextViewStyle.Regular"
+                android:layout_marginStart="@dimen/space_12"
+                android:layout_marginTop="@dimen/space_8"
+                android:layout_toEndOf="@+id/ivService"
+                android:text="@{productItem.serviceName}"
+                android:textSize="@dimen/font_large"
+                tools:text="@string/text_your_own_order"/>
+
+        <TextView
+                android:id="@+id/tvPriceValue"
+                style="@style/TextViewStyle.Medium"
+                android:layout_below="@+id/tvSubcategoryName"
+                android:layout_marginStart="@dimen/space_12"
+                android:layout_marginTop="@dimen/space_4"
+                android:layout_toEndOf="@+id/ivService"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                tools:text="₹ 0"/>
+    </RelativeLayout>
+</layout>

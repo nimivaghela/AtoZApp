@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="subcategory" type="com.app.atoz.models.CategoryModel"/>
+        <import type="android.view.View"/>
+    </data>
+
+    <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:padding="@dimen/space_16"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="true"
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_height="wrap_content">
+
+        <ImageView
+                android:id="@+id/tvCategoryImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                load_url_image="@{subcategory.categoryImage}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_bag"
+                tools:ignore="ContentDescription"/>
+
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/space_12"
+                android:layout_toStartOf="@+id/rlPriceView"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/tvCategoryImage">
+
+            <TextView
+                    android:id="@+id/tvSubcategory"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="match_parent"
+                    android:text="@{subcategory.categoryName}"
+                    tools:text="Your Own Order"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_normal"/>
+
+            <TextView
+                    android:id="@+id/tvSubcategoryDesc"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="match_parent"
+                    android:text="@{subcategory.categoryDescription}"
+                    tools:text="(up to 3 items)."
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_vertical"
+                    android:visibility="@{subcategory.categoryDescription!=null ? View.VISIBLE : View.GONE}"
+                    android:textSize="@dimen/font_medium"/>
+        </LinearLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlPriceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginEnd="@dimen/space_16"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/chbSubcategory">
+
+            <TextView
+                    android:id="@+id/tvPriceValue"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    tools:text="₹ 20"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/font_normal"/>
+
+            <TextView
+                    android:id="@+id/tvTotalAmountOriginalValue"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    tools:text="₹ 60"
+                    app:strikeThrough="@{true}"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="end"
+                    android:layout_marginEnd="@dimen/space_8"
+                    android:visibility="visible"
+                    android:textSize="@dimen/font_large"/>
+
+            <TextView
+                    android:id="@+id/tvTotalAmountValue"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="wrap_content"
+                    tools:text="₹ 50"
+                    android:textColor="@color/green"
+                    android:layout_toEndOf="@+id/tvTotalAmountOriginalValue"
+                    android:visibility="visible"
+                    android:textSize="@dimen/font_large"/>
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/chbSubcategory"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:checked="@{subcategory.isChecked}"
+                android:clickable="false"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/space_0"
+                android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+</layout>

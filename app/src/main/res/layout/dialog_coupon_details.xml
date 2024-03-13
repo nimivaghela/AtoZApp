@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="coupon" type="com.app.atoz.models.homescreen.CouponItem"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/space_16">
+
+        <TextView
+                android:id="@+id/tvCouponTitle"
+                style="@style/TextViewStyle.Bold"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font_largest"
+                android:text="@string/text_title_coupon_details"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_0_5"
+                android:background="@drawable/item_divider"
+                android:layout_marginTop="@dimen/space_16"/>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                android:scrollbars="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/space_8">
+                <TextView
+                        android:id="@+id/tvCouponCode"
+                        style="@style/TextViewStyle.Medium"
+                        android:layout_marginTop="@dimen/space_16"
+                        android:text="@string/text_coupon_code"
+                        android:textSize="@dimen/font_large"/>
+
+                <TextView
+                        android:id="@+id/tvCouponCodeValue"
+                        style="@style/TextViewStyle.Regular"
+                        android:text="@{coupon.couponCode}"
+                        android:layout_toEndOf="@+id/tvCouponCode"
+                        android:layout_alignBaseline="@+id/tvCouponCode"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:textSize="@dimen/font_normal"
+                        tools:text="XYZ"/>
+
+                <TextView
+                        android:id="@+id/tvCouponDiscount"
+                        style="@style/TextViewStyle.Medium"
+                        android:text="@string/text_coupon_discount"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_below="@+id/tvCouponCode"
+                        android:textSize="@dimen/font_large"/>
+
+                <TextView
+                        android:id="@+id/tvCouponDiscountValue"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_below="@+id/tvCouponCode"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_toEndOf="@+id/tvCouponDiscount"
+                        android:layout_alignBaseline="@+id/tvCouponDiscount"
+                        android:text="@{@string/text_discount_percentage(coupon.discount)}"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:textSize="@dimen/font_normal"
+                        tools:text="10%"/>
+
+                <TextView
+                        android:id="@+id/tvCouponDescription"
+                        style="@style/TextViewStyle.Medium"
+                        android:text="@string/text_coupon_description"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_below="@+id/tvCouponDiscount"
+                        android:textSize="@dimen/font_large"/>
+
+                <TextView
+                        android:id="@+id/tvCouponDescriptionValue"
+                        style="@style/TextViewStyle.Regular"
+                        android:layout_below="@+id/tvCouponDiscount"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:layout_toEndOf="@+id/tvCouponDescription"
+                        android:layout_alignBaseline="@+id/tvCouponDescription"
+                        android:text="@{coupon.description}"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:textSize="@dimen/font_normal"
+                        tools:text="lorem ipsum lorem ipsum lorem"/>
+
+                <TextView
+                        android:id="@+id/tvCouponValidTill"
+                        style="@style/TextViewStyle.Medium"
+                        android:text="@string/text_coupon_valid_till"
+                        android:layout_below="@+id/tvCouponDescriptionValue"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:textSize="@dimen/font_large"/>
+
+                <TextView
+                        android:id="@+id/tvCouponValidTillValue"
+                        style="@style/TextViewStyle.Regular"
+                        android:text="@{coupon.getCouponTillEndDate()}"
+                        tools:text="31 Mar 2019 "
+                        android:layout_toEndOf="@+id/tvCouponValidTill"
+                        android:layout_alignBaseline="@+id/tvCouponValidTill"
+                        android:layout_marginStart="@dimen/space_8"
+                        android:layout_below="@+id/tvCouponDescriptionValue"
+                        android:textSize="@dimen/font_normal"
+                        android:layout_marginTop="@dimen/space_8"/>
+
+                <TextView
+                        android:layout_below="@+id/tvCouponValidTill"
+                        style="@style/TextViewStyle.Regular"
+                        android:textSize="@dimen/font_small_extra"
+                        android:layout_marginTop="@dimen/space_8"
+                        android:textColor="@color/dark_grey"
+                        android:text="@string/text_discount_application"/>
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

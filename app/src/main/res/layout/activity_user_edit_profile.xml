@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+            android:id="@+id/rlRootView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <include
+                android:id="@+id/SignUpToolbar"
+                layout="@layout/toolbar"/>
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/SignUpToolbar"
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                android:scrollbars="vertical">
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16"
+                    android:layout_marginBottom="@dimen/space_16"
+                    android:layout_marginEnd="@dimen/space_16">
+
+
+                <RelativeLayout
+                        android:id="@+id/rlUploadPic"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/space_28">
+
+                    <ImageView
+                            android:id="@+id/ivUploadPic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_circle_grey_with_shadow"
+                            android:src="@drawable/bg_circle_grey_camera"
+                            tools:ignore="ContentDescription"/>
+
+                    <ImageView
+                            android:id="@+id/ivUploadPicPlus"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_alignEnd="@+id/ivUploadPic"
+                            android:layout_margin="@dimen/space_16"
+                            android:background="@drawable/ic_rounded_red_plus"
+                            tools:ignore="ContentDescription"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                        android:id="@+id/llName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlUploadPic"
+                        android:layout_marginTop="@dimen/space_32"
+                        android:baselineAligned="false"
+                        android:weightSum="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilFirstName"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="0dp"
+                            android:layout_marginEnd="@dimen/space_8"
+                            android:layout_weight="0.5"
+                            android:hint="@string/text_hint_first_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etFirstName"
+                                style="@style/EditTextStyle.Medium"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilLastName"
+                            style="@style/TextInputLayoutStyle"
+                            android:layout_width="0dp"
+                            android:layout_marginStart="@dimen/space_8"
+                            android:layout_weight="0.5"
+                            android:hint="@string/text_hint_last_name">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etLastName"
+                                style="@style/EditTextStyle.Medium"
+                                android:imeOptions="actionNext"
+                                android:inputType="textPersonName"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilEmail"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_below="@+id/llName"
+                        android:layout_marginTop="@dimen/space_24"
+                        android:hint="@string/text_hint_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEmail"
+                            style="@style/EditTextStyle.Medium"
+                            android:imeOptions="actionNext"
+                            android:enabled="false"
+                            android:inputType="textEmailAddress"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilPhoneNumber"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_below="@+id/tilEmail"
+                        android:layout_marginTop="@dimen/space_24"
+                        android:hint="@string/text_phone_number">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etPhoneNumber"
+                            style="@style/EditTextStyle.Medium"
+                            android:imeOptions="actionNext"
+                            android:enabled="false"
+                            android:inputType="phone"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilLocationPiker"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_below="@+id/tilPhoneNumber"
+                        android:layout_marginTop="@dimen/space_24"
+                        android:maxLines="3"
+                        android:hint="@string/location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_location_piker"
+                            style="@style/EditTextStyle.Medium"
+                            tools:ignore="Autofill"
+                            android:drawableEnd="@drawable/ic_add_location"
+                            android:focusable="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilAddress"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_below="@+id/tilLocationPiker"
+                        android:layout_marginTop="@dimen/space_24"
+                        android:hint="@string/text_hint_address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etAddress"
+                            style="@style/EditTextStyle.Medium"
+                            android:fadeScrollbars="false"
+                            android:inputType="textMultiLine|textPostalAddress"
+                            android:maxLines="5"
+                            android:nestedScrollingEnabled="true"
+                            android:scrollbarStyle="insideInset"
+                            android:scrollbarThumbVertical="@drawable/bg_scrollbar_indicator"
+                            android:scrollbars="vertical"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilCityState"
+                        style="@style/TextInputLayoutStyle"
+                        android:layout_below="@+id/tilAddress"
+                        android:layout_marginTop="@dimen/space_24"
+                        android:maxLines="3"
+                        android:hint="@string/select_city">
+
+                    <AutoCompleteTextView
+                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:padding="@dimen/space_18"
+                            android:id="@+id/ac_city_state"
+                            style="@style/EditTextStyle.Medium"
+                            tools:ignore="LabelFor"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSave"
+                        style="@style/ButtonStyle.Medium"
+                        android:layout_height="@dimen/space_56"
+                        android:layout_below="@id/tilCityState"
+                        android:layout_marginBottom="@dimen/space_24"
+                        android:layout_marginTop="@dimen/space_32"
+                        android:text="@string/text_btn_save"/>
+            </RelativeLayout>
+        </ScrollView>
+
+        <include
+                android:id="@+id/progressBar"
+                layout="@layout/item_progressbar"/>
+    </RelativeLayout>
+</layout>

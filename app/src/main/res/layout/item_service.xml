@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="serviceItem" type="com.app.atoz.models.homescreen.ServicesItem"/>
+    </data>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_9"
+                android:layout_marginTop="@dimen/space_10"
+                android:layout_marginEnd="@dimen/space_20"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:id="@+id/tv_service_name"
+                    style="@style/TextViewStyle.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/space_8"
+                    android:text="@{serviceItem.name}"
+                    android:textSize="@dimen/font_large"
+                    tools:text="@string/personal_services"/>
+
+            <TextView
+                    android:id="@+id/tv_view_all"
+                    style="@style/TextViewStyle.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_all"
+                    android:textColor="@color/grey"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_8"
+                android:clipToPadding="false"
+                android:paddingStart="@dimen/space_8"
+                android:paddingEnd="@dimen/space_0"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                android:scrollbarThumbHorizontal="@drawable/bg_scrollbar_horizontal_indicator"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_service_child"/>
+    </LinearLayout>
+</layout>
